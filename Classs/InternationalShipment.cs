@@ -35,7 +35,7 @@ namespace Polymorphism_ASSIGNMENT_03.Classs
         {
             get
             {
-                return DeliveryFee + (Weight * 5) + CustomsFee;
+                return DeliveryFee + (Weight * 5) + ExtraFee;
             }
         }
         public override void PrintShipment()
