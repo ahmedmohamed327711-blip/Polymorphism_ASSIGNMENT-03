@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             //Q1 — Overloading, Overriding, and Binding
+
             //a
             //Method Overloading ==> it have the same method name but different parameters.
             //Method Overriding ==> it have the same method name and same parameters but different class or signature.
@@ -18,6 +19,7 @@
             //============================================================================================================
 
             //  Q2 Sealed Classes and Methods
+
             //a
             //sealed ==> it is use to prevent inheritance  ||  cannot be inherited,
 
