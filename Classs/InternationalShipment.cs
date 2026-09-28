@@ -38,6 +38,9 @@ namespace Polymorphism_ASSIGNMENT_03.Classs
                 return DeliveryFee + (Weight * 5) + ExtraFee;
             }
         }
+
+        public decimal ExtraFee { get; private set; }
+
         public override void PrintShipment()
         {
             base.PrintShipment();
