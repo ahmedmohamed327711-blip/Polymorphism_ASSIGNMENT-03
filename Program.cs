@@ -5,6 +5,8 @@ namespace Polymorphism_ASSIGNMENT_03
 {
     internal class Program
     {
+        private static DeliveryAddress destination;
+
         static void Main(string[] args)
         {
 
@@ -337,7 +339,66 @@ namespace Polymorphism_ASSIGNMENT_03
             //No ==> because sealed method cannot be overridden in child classes.  
             #endregion
 
-            
+
+            #region 9-Checklist
+            DeliveryCenter center = new DeliveryCenter("Cairo Delivery Center");
+            StandardShipment standard = new StandardShipment(
+                "SH001",
+                "Laptop",
+                3,
+                80,
+                destination);
+
+            ExpressShipment express = new ExpressShipment(
+                "SH002",
+                "Mobile Phone",
+                2,
+                60,
+                destination,
+                30);
+
+            InternationalShipment international = new InternationalShipment(
+                "SH003",
+                "Television",
+                8,
+                120,
+                destination,
+                "Germany",
+                100);
+
+            center.AddShipment(standard);
+            center.AddShipment(express);
+            center.AddShipment(international);
+
+            center.PrintAllShipments();
+
+            DeliveryHelper.PrintShipmentDetails(standard);
+            DeliveryHelper.PrintShipmentDetails(express);
+            DeliveryHelper.PrintShipmentDetails(international);
+
+            Console.WriteLine($"Original Weight: {standard.Weight}");
+
+            standard.UpdateWeight(5);
+
+            Console.WriteLine($"Updated Weight: {standard.Weight}");
+
+            standard.UpdateWeight(5, 0.5m);
+
+            Console.WriteLine($"Updated Weight After Packing: {standard.Weight}");
+
+            Shipment[] shipments =
+            {
+                standard,
+                express,
+                international
+            };
+
+            foreach (Shipment shipment in shipments)
+            {
+                shipment.PrintShipment();
+            }
+
+            #endregion
             #endregion
 
         }
